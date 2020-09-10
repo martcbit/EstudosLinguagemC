@@ -3,6 +3,6 @@
 
 int main(void)
 {
-    int num1 = 2;
+    int num1 = 3;
     printf("O numero é: %d", num1);
 }
