@@ -13,14 +13,16 @@ int main(void)
     int totalnotas;
     float mediaGeral;
 
-    for (int i = 1; i < qtdAlunos; i++)
+    for (int i = 1; i <= qtdAlunos; ++i)
     {
         printf("Digite a nota do Aluno %d : \n", i);
         scanf("%f", &notaAlunos[i]);
         totalnotas += notaAlunos[i];
     }
-    for (int i = 1; i < qtdAlunos; i++)
+    for (int i = 1; i <= qtdAlunos; ++i)
     {
-        printf("A nota do Aluno %d é: %f \n", i, notaAlunos[i]);
+        printf("A nota do Aluno %d é: %.2f \n", i, notaAlunos[i]);
     }
+    mediaGeral = totalnotas / qtdAlunos;
+    printf("A Média Geral da turma foi: %.2f \n", mediaGeral);
 }
