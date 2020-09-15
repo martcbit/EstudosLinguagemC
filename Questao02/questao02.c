@@ -15,7 +15,7 @@ int main(void)
 
     for (int i = 1; i <= qtdAlunos; ++i)
     {
-        printf("Digite a nota do Aluno %d : \n", i);
+        printf("Digite a Nota do Aluno %d : \n", i);
         scanf("%f", &notaAlunos[i]);
         totalnotas += notaAlunos[i];
     }
