@@ -44,10 +44,10 @@ int main(void)
     {
         printf("%d valor é: %d \n", i, vetValores[i]);
     }
-    printf("O menor valor digitado foi: %d \n", menorValor);
-    printf("O menor valor se encontra na Posição [%d] \n", pMenorValor);
-    printf("O maior valor digitado foi: %d \n", maiorValor);
-    printf("O maior se encontra na posição [%d] \n", pMaiorValor);
+    printf("O Menor valor digitado foi: %d \n", menorValor);
+    printf("O Menor valor se encontra na Posição [%d] \n", pMenorValor);
+    printf("O Maior valor digitado foi: %d \n", maiorValor);
+    printf("O Maior se encontra na posição [%d] \n", pMaiorValor);
 
     return 0;
 }

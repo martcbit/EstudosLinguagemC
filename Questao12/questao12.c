@@ -34,7 +34,7 @@ void imprimirAlunosNotas(struct alunosStruct alunos[])
     {
         printf("\nMatricula Aluno %d : %d \n", i, alunos[i].matricula);
         alunos[i].mediaNotas = (alunos[i].nota1 + alunos[i].nota2) / 2;
-        printf("Media: %.2f", alunos[i].mediaNotas);
+        printf("Media : %.2f", alunos[i].mediaNotas);
         printf("\n");
     }
 }
