@@ -6,34 +6,54 @@ Escrever um programa que cadastre a altura, o peso, o cpf e sexo de algumas pess
 Com os dados cadastrados, em seguida localizar uma pessoas através do seu CPF 
 e imprimir o seu IMC.
 */
-struct example
-{
-    int matricula;
-    float nota1;
-    float nota2;
-    float mediaNotas;
-};
 
-void names(struct example alunos[])
+typedef struct
 {
-    int i;
-    for (i = 1; i <= 3; i++)
-    {
-        printf("\nDigite a Matricula do Aluno %d: \n", i);
-        scanf("%d", &alunos[i].matricula);
-        printf("Primeira Nota: \n");
-        scanf("%f", &alunos[i].nota1);
-        printf("Segunda Nota: \n");
-        scanf("%f", &alunos[i].nota2);
-    }
-}
+    char nome[100];
+    char sexo; // 'm': masculino, 'f': femino
+    float peso;
+    float altura;
+    long long cpf;
+} Pessoa;
 
-void name(struct example alunos[])
-{
-}
+#define qtdPessoas 3
 
 int main()
 {
+    Pessoa pessoas[qtdPessoas];
 
+    printf("Campos: nome, altura, peso, cpf, sexo\n");
+    for (int i = 1; (i <= qtdPessoas); i++)
+    {
+        printf("\nInforme o nome da pessoa(%i): \n", i);
+        scanf("%s", &pessoas[i].nome);
+        printf("\nInforme a Altura da pessoa(%i): \n", i);
+        scanf("%f", &pessoas[i].altura);
+        printf("\nInforme o Peso da pessoa(%i): \n", i);
+        scanf("%s %f %f %Lu %c", &pessoas[i].peso, &pessoas[i].cpf, &pessoas[i].sexo);
+        printf("\nInforme o CPF da pessoa(%i): \n", i);
+        scanf("%Lu", &pessoas[i].cpf);
+        printf("\nInforme o nome da pessoa(%i): \n\n\n", i);
+        scanf("%c", &pessoas[i].sexo);
+    }
+
+    printf("\nInforme o CPF da pessoa: ");
+    long long cpf_localizador;
+    scanf("%Lu", &cpf_localizador); // 1
+
+    printf("\nSexo\tNome\tIMC");
+    for (int i = 0; (i < qtdPessoas); i++)
+    { //2
+        if (cpf_localizador == pessoas[i].cpf)
+        { //3
+            float imc = pessoas[i].peso / (pessoas[i].altura *
+                                           pessoas[i].altura);
+            printf("\n%c\t%s\t%1.2f\n", pessoas[i].sexo,
+                   pessoas[i].nome, imc);
+            break;
+        }
+    }
+
+    getchar();
     return 0;
 }
